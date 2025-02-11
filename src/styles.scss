@@ -1,1 +1,33 @@
 /* You can add global styles to this file, and also import other style files */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+mat-chip-set.chip-container .mdc-evolution-chip-set__chips {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    max-width: 100%;
+    /* Adjust as needed */
+    padding: 8px 0;
+    /* Optional: Adds spacing */
+}
+
+.chip-container::-webkit-scrollbar {
+    height: 6px;
+    /* Custom scrollbar height */
+}
+
+.chip-container::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    /* Custom scrollbar color */
+    border-radius: 10px;
+}

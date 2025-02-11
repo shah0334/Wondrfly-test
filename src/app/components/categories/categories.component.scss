@@ -1,0 +1,9 @@
+.chip-container {
+    position: sticky;
+    top: 0;
+    display: flex;
+    overflow-x: auto;
+    background: white;
+    padding: 10px;
+    z-index: 9999;
+}
