@@ -58,17 +58,6 @@ export class CategoryProvidersComponent {
             );
           }
         }
-
-        // console.log(
-        //   entries.map((entry) => entry.target.getAttribute('data-category')),
-        //   entries
-        // );
-
-        // const fullyShownEntry = entries[0];
-        // const selectedCategory =
-        //   fullyShownEntry?.target.getAttribute('data-category');
-        // if (selectedCategory)
-        //   this.updateSelectedCategory.emit(selectedCategory);
       },
       { threshold: 1 }
     );
