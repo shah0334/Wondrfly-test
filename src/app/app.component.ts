@@ -1,51 +1,39 @@
-import {
-  Component,
-  ElementRef,
-  inject,
-  OnInit,
-  signal,
-  viewChild,
-} from '@angular/core';
-import { CategoriesComponent } from './components/categories/categories.component';
-import { DataService } from './shared/services/data.service';
-import { CategoryProvidersComponent } from './components/category-providers/category-providers.component';
-import { CategoryProvider } from './shared/models/provider.interface';
+import { Component, inject } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { Router, RouterOutlet } from '@angular/router';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CategoriesComponent, CategoryProvidersComponent],
+  imports: [
+    RouterOutlet,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    FormsModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent implements OnInit {
-  dataService = inject(DataService);
-  categories = signal<string[]>([]);
-  categoryProviders = signal<CategoryProvider[]>([]);
-  data = signal<CategoryProvider[]>([]);
-  selectedCategory = signal<string | undefined>(undefined);
-  categoriesComponent = viewChild(CategoriesComponent);
-  providersComponent = viewChild(CategoryProvidersComponent);
-
-  async ngOnInit() {
-    const categories = await this.fetchCategories();
-    this.categories.update(() => categories);
-
-    const categoryProviders = await this.fetchCategoryProviders();
-    this.categoryProviders.update(() => categoryProviders);
+export class AppComponent {
+  private router = inject(Router);
+  city: string = '';
+  program: string = '';
+  category: string = '';
+  openTask1() {
+    this.router.navigate(['task1']);
   }
 
-  fetchCategories = () => this.dataService.getCategories();
-  fetchCategoryProviders = () => this.dataService.getData();
-  onCategorySelect = (category: string, scrollFn: () => void) => {
-    this.selectedCategory.update(() => {
-      return category;
-    });
+  openTask2() {
+    const url = `task2${this.city ? `/${this.city}` : ''}${
+      this.program ? `/${this.program}` : ''
+    }${this.category ? `/${this.category}` : ''}`;
 
-    setTimeout(() => scrollFn(), 100);
-  };
-  scrollCategoriesComponent = () =>
-    this.categoriesComponent()?.scrollToSelected();
-  scrollProvidersComponent = () =>
-    this.providersComponent()?.scrollToSelected();
+    this.router.navigate([url]);
+  }
 }

@@ -9,7 +9,7 @@
 
 .subheader {
     padding: 10px;
-    border-radius: 5%;
+    border-radius: 20px;
 }
 
 @keyframes flashBackground {
@@ -30,5 +30,5 @@
 }
 
 .flash-primary {
-    animation: flashBackground 1s alternate;
+    animation: flashBackground 1s infinite alternate;
 }

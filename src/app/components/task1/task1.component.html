@@ -1,0 +1,7 @@
+<div class="container">
+    <app-categories [selectedCategory]="selectedCategory()" [categories]="categories()"
+        (categorySelected)="onCategorySelect($event, scrollProvidersComponent)"></app-categories>
+
+    <app-category-providers (updateSelectedCategory)="onCategorySelect($event, scrollCategoriesComponent)"
+        [selectedCategory]="selectedCategory()" [categoryProviders]="categoryProviders()"></app-category-providers>
+</div>

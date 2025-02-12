@@ -1,7 +1,33 @@
-<div class="container">
-  <app-categories [selectedCategory]="selectedCategory()" [categories]="categories()"
-    (categorySelected)="onCategorySelect($event, scrollProvidersComponent)"></app-categories>
+<mat-card appearance="outlined">
+  <mat-card-content>
+    <button mat-flat-button (click)="openTask1()">Open Task 1</button>
+  </mat-card-content>
+</mat-card>
 
-  <app-category-providers (updateSelectedCategory)="onCategorySelect($event, scrollCategoriesComponent)"
-    [selectedCategory]="selectedCategory()" [categoryProviders]="categoryProviders()"></app-category-providers>
-</div>
+<mat-card appearance="outlined">
+  <mat-card-content>Task 2
+
+    <div class="form-container">
+      <mat-form-field class="example-full-width">
+        <mat-label>City</mat-label>
+        <input matInput [(ngModel)]="city" value="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Program</mat-label>
+        <input matInput [(ngModel)]="program" value="">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Category</mat-label>
+        <input matInput [(ngModel)]="category" value="">
+      </mat-form-field>
+
+      <button mat-flat-button (click)="openTask2()">Go</button>
+    </div>
+
+  </mat-card-content>
+</mat-card>
+
+
+<router-outlet></router-outlet>

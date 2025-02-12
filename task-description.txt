@@ -1,0 +1,97 @@
+
+Task 1: Categories Scroll and Auto-Select
+
+We need to implement the following behavior in an Angular 18 application:
+
+1. Categories (Left to Right Scroll, Sticky/Fixed):
+   - Display a list of 12 categories horizontally in a sticky or fixed position at the top, which should be scrollable from left to right. The categories array is as follows:
+
+```javascript
+const categories = [
+  'Sports', 'Dance', 'Music', 'Art', 'Fitness', 'Technology', 
+  'Cooking', 'Photography', 'Education', 'Health', 'Business', 'Travel'
+];
+```
+
+   - The category list should remain fixed at the top of the viewport when scrolling through the data list.
+
+2                    
+   - Display the associated data for each category vertically, which should be scrollable up and down. The data structure is as follows:
+
+```javascript
+const data = [
+  { 
+    name: 'Sports', 
+    providers: [
+      { name: 'Pro1', image: 'URL' },
+      { name: 'Pro2', image: 'URL' },
+    ],
+  },
+  { 
+    name: 'Dance', 
+    providers: [
+      { name: 'Pro3', image: 'URL' },
+      { name: 'Pro4', image: 'URL' },
+    ],
+  },
+  // More categories and providers...
+];
+
+### Requirements:
+1. **Automatic Category Selection on Scroll:**
+   - As the user scrolls through the data list (up or down), the corresponding category in the sticky horizontal list should be automatically selected and highlighted.
+
+2. **Category Scroll to Viewport:**
+   - When a category in the horizontal list comes into the viewport during scrolling, the category list should automatically scroll to highlight the relevant category.
+
+3. **Click Behavior:**
+   - When a user clicks on a category in the left-to-right category list, the data list should scroll to the corresponding category section.
+   - If the clicked category is partially visible (i.e., half of it is in the viewport), it should be fully brought into the viewport.
+
+Please implement this functionality using Angular 18 with Signals.
+
+---
+
+Task 2: Handling Optional Parameters in URL for Data Filtering
+
+We have a URL structure like this:
+
+```
+DOMAIN.COM/CITY-NAME/PROGRAM-NAME/CATEGORY-NAME
+```
+
+The `city`, `program`, and `category` are optional parameters in the URL. Here are the different possible variations:
+
+1. `DOMAIN.COM/CITY-NAME/`  
+2. `DOMAIN.COM/CITY-NAME/PROGRAM-NAME`
+3. `DOMAIN.COM/CITY-NAME/PROGRAM-NAME/CATEGORY-NAME`
+
+### Cities:
+Cities may vary, and examples include:
+- Jersey City, Hoboken, New York City, San Francisco, Los Angeles
+
+### Categories:
+Categories can include:
+- Sports, Dance, Music, Art, Fitness, Technology, Cooking, Photography, Education, Health, Business, Travel
+
+### Programs:
+Programs can include a wide range of options, such as:
+- 'Soccer Training', 'Basketball Skills', 'Hip Hop Dance', 'Yoga Basics', 'Advanced Cooking', 
+  'Photography 101', 'Art for Beginners', 'Fitness Bootcamp', 'Business Strategies', 'Travel Photography', 
+  'Health Coaching', 'Digital Marketing', 'Web Development', 'Graphic Design', 'Music Production', 
+  'Personal Finance', 'Language Learning', 'Marketing Analytics', 'Leadership Training', 'Creative Writing', 
+  'Public Speaking', 'Fashion Design', 'Interior Design', 'Nutrition and Wellness'
+
+We need to handle these optional parameters in a way that allows us to fetch or filter data accordingly. If any of the parameters are present in the URL, we should filter the data based on that. If any of the parameters are missing, we should still proceed with fetching the data based on the available parameters. If none of the parameters is valid or present, the user should be redirected to the 404 page.
+
+**Note:** We are not using query parameters here.
+
+### Requirements:
+- You can use any dummy data for testing.
+- Provide a solution that correctly handles the routing logic.
+- If the URL has any invalid city, program, or category, redirect the user to a 404 page.
+- If one or more of these parameters are missing, the application should still work, using only the available valid parameters.
+
+### How will you handle and detect if the URL has valid values for `city`, `program`, and `category`, and display data accordingly? If any of these parameters are invalid or missing, how will you redirect to the 404 page?
+
+Please provide an example solution to handle this routing structure.

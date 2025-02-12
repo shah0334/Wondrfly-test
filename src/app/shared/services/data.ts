@@ -172,4 +172,34 @@ const data = [
   },
 ];
 
-export { categories, data };
+const validCities = [
+  'Jersey City',
+  'Hoboken',
+  'New York City',
+  'San Francisco',
+  'Los Angeles',
+];
+const validCategories = [
+  'Sports',
+  'Dance',
+  'Music',
+  'Art',
+  'Fitness',
+  'Technology',
+  'Cooking',
+  'Photography',
+  'Education',
+  'Health',
+  'Business',
+  'Travel',
+];
+const validPrograms = [
+  'Soccer Training',
+  'Basketball Skills',
+  'Hip Hop Dance',
+  'Yoga Basics',
+  'Advanced Cooking',
+  'Photography 101',
+];
+
+export { categories, data, validCategories, validCities, validPrograms };

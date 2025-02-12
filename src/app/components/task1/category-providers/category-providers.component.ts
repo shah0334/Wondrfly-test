@@ -12,7 +12,7 @@ import {
   MatListModule,
   MatListSubheaderCssMatStyler,
 } from '@angular/material/list';
-import { CategoryProvider } from '../../shared/models/provider.interface';
+import { CategoryProvider } from '../../../shared/models/provider.interface';
 
 @Component({
   selector: 'app-category-providers',
@@ -36,6 +36,20 @@ export class CategoryProvidersComponent {
       const elements = this.categoryProviderElems();
       if (elements.length) {
         this.setupScrollObserver(elements);
+      }
+    });
+
+    effect(() => {
+      const selectedCategory = this.selectedCategory();
+      const elements = this.categoryProviderElems();
+
+      if (selectedCategory && elements.length) {
+        const selectedElement = elements.find(
+          (elem) =>
+            elem.nativeElement.getAttribute('data-category') ===
+            selectedCategory
+        );
+        if (selectedElement) this.flashElement(selectedElement);
       }
     });
   }
