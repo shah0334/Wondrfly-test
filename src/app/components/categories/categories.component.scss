@@ -1,9 +1,18 @@
 .chip-container {
-    position: sticky;
-    top: 0;
+
     display: flex;
-    overflow-x: auto;
+
     background: white;
     padding: 10px;
+
+}
+
+
+.container {
+    position: sticky;
+    top: 0;
+    overflow-x: auto;
     z-index: 9999;
+    height: 70px;
+    overflow-y: hidden;
 }

@@ -1,5 +1,7 @@
-<app-categories [selectedChip]="selectedCategory()" [categories]="categories()"
-  (categorySelected)="onCategorySelect($event)"></app-categories>
+<div class="container">
+  <app-categories [selectedCategory]="selectedCategory()" [categories]="categories()"
+    (categorySelected)="onCategorySelect($event, scrollProvidersComponent)"></app-categories>
 
-<app-category-providers (updateSelectedCategory)="onCategorySelect($event)" [selectedCategory]="selectedCategory()"
-  [categoryProviders]="categoryProviders()"></app-category-providers>
+  <app-category-providers (updateSelectedCategory)="onCategorySelect($event, scrollCategoriesComponent)"
+    [selectedCategory]="selectedCategory()" [categoryProviders]="categoryProviders()"></app-category-providers>
+</div>

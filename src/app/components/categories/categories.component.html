@@ -1,6 +1,8 @@
-<mat-chip-set class="chip-container">
-    @for (category of categories(); track category){
-    <mat-chip [attr.data-category]="category" [highlighted]="selectedChip() === category"
-        (click)="onCategorySelect(category)">{{category}}</mat-chip>
-    }
-</mat-chip-set>
+<div #list class="container">
+    <mat-chip-set class="chip-container">
+        @for (category of categories(); track category){
+        <mat-chip [attr.data-category]="category" [highlighted]="selectedCategory() === category"
+            (click)="onCategorySelect(category)">{{category}}</mat-chip>
+        }
+    </mat-chip-set>
+</div>

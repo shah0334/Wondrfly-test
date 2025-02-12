@@ -1,8 +1,7 @@
-<div class="provider-container" alias="provider" appAutoSelect [selected]="selectedCategory()"
-    [selectables]="categoryProviderElems()" (updateSelectable)="onCategorySelect($event)">
+<div class="provider-container">
     <mat-list>
         @for(categoryProvider of categoryProviders(); track categoryProvider.name) {
-        <div [attr.data-category]="categoryProvider.name" mat-subheader>
+        <div class="subheader" [attr.data-category]="categoryProvider.name" mat-subheader>
             {{categoryProvider.name}}
             @for(provider of categoryProvider.providers; track provider.name) {
             <mat-list-item>
